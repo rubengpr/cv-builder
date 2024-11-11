@@ -14,9 +14,9 @@ export default function App() {
         <div className='header'>
           <H1 name="Ruben Godoy" />
           <div className='personal-info-container'>
-            <PersonalInfo src="./public/phone.svg" data="+34 685 90 38 45" />
-            <PersonalInfo src="./public/email.svg" data="rubengpr@gmail.com" />
-            <PersonalInfo src="./public/pin.svg" data="Barcelona, Spain" />
+            <PersonalInfo src="/phone.svg" data="+34 685 90 38 45" />
+            <PersonalInfo src="/email.svg" data="rubengpr@gmail.com" />
+            <PersonalInfo src="/pin.svg" data="Barcelona, Spain" />
             </div>
         </div>
         <div className="body-cv">
