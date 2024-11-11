@@ -1,0 +1,14 @@
+.section-title {
+    background-color: rgb(254, 217, 162);
+    font-size: 14px;
+    font-style: italic;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0px;
+}
+
+h3 {
+    margin: 5px 0px;
+}

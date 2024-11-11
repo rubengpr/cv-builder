@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.body-cv {
+    margin: 20px 40px
+}
+
+.personal-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header {
+    background-color: bisque;
+    padding: 30px 0px;
+}
