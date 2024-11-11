@@ -1,15 +1,15 @@
 import './cv-element.css'
 
-export function CvElement() {
+export function CvElement({ period, city, place, subject }) {
     return(
         <div className="divs-container">
             <div className="div1">
-                <p className='period'>2020-2024</p>
-                <p>Barcelona</p>
+                <p className='period'>{period}</p>
+                <p>{city}</p>
             </div>
             <div className="div2">
-                <p className='university'>Universitat de Barcelona</p>
-                <p>Bachelors in Economics</p>
+                <p className='place'>{place}</p>
+                <p>{subject}</p>
             </div>
         </div>  
     )

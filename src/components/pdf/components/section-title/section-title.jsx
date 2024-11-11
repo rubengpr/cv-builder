@@ -1,9 +1,9 @@
 import './section-title.css';
 
-export function SectionTitle() {
+export function SectionTitle({ title }) {
     return(
         <div className="section-title">
-            <h3>Section Title</h3>
+            <h3>{title}</h3>
         </div>
     )
 }

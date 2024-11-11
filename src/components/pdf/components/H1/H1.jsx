@@ -1,7 +1,7 @@
 import './H1.css'
 
-export function H1() {
+export function H1({ name }) {
     return(
-        <h1>Ruben Godoy Prats</h1>
+        <h1>{ name }</h1>
     )
 }

@@ -1,10 +1,10 @@
 import './personal-info.css'
 
-export function PersonalInfo() {
+export function PersonalInfo({ src, data }) {
     return(
         <div className='personal-info'>
-            <img className='icon' src="./src/public/avatar.svg" alt="A React logo" />
-            <p>A person info</p>
+            <img className='icon' src={src} alt="A React logo" />
+            <p>{data}</p>
         </div>
         
     )

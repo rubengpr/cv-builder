@@ -12,20 +12,20 @@ export default function App() {
     <React.StrictMode>
       <Pdf>
         <div className='header'>
-          <H1 />
+          <H1 name="Ruben Godoy" />
           <div className='personal-info-container'>
-            <PersonalInfo/>
-            <PersonalInfo/>
-            <PersonalInfo/>
+            <PersonalInfo src="./public/phone.svg" data="+34 685 90 38 45" />
+            <PersonalInfo src="./public/email.svg" data="rubengpr@gmail.com" />
+            <PersonalInfo src="./public/pin.svg" data="Barcelona, Spain" />
             </div>
         </div>
         <div className="body-cv">
-          <SectionTitle />
-          <CvElement />
-          <CvElement />
-          <SectionTitle />
-          <CvElement />
-          <CvElement />
+          <SectionTitle title="Work Experience" />
+          <CvElement period="Feb 2024-Now" city="Barcelona" place="Talenom" subject="Product Manager" />
+          <CvElement period="Feb 2023-Jul 2023" city="San José" place="Moovin Logistics" subject="Product Lead" />
+          <SectionTitle title="Education" />
+          <CvElement period="2020-2021" city="Granada" place="Universidad de Granada" subject="Masters in Economics" />
+          <CvElement period="2014-2018" city="Barcelona" place="Universitat de Barcelona" subject="Bachelor in Business Administration" />
         </div>
       </Pdf>
     </React.StrictMode>
