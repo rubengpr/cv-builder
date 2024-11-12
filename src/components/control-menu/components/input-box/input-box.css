@@ -1,0 +1,12 @@
+.input-box {
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin: 10px 0px;
+}
