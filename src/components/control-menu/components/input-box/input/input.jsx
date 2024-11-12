@@ -1,4 +1,4 @@
-import './input.css'
+import './Input.css'
 
 export function Input({ label, placeholder }) {
     return(

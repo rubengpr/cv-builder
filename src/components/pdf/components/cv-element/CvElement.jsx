@@ -1,4 +1,4 @@
-import './cv-element.css'
+import './CvElement.css'
 
 export function CvElement({ period, city, place, subject }) {
     return(

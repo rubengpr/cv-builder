@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './control-menu.css'
+import './ControlMenu.css'
 
 export function ControlMenu({ children }) {
     return(

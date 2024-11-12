@@ -1,4 +1,4 @@
-import './personal-info.css'
+import './PersonalInfo.css'
 
 export function PersonalInfo({ src, data }) {
     return(
