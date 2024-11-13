@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './pdf.css';
+import './Pdf.css';
 
 export function Pdf({ children }) {
     return(
