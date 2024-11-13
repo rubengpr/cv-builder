@@ -1,12 +1,33 @@
-.input-box {
-    background-color: white;
-    border-radius: 5px;
-    margin: 20px 40px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+.card-expanded {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+
+.card-collapsed {
+    display: none;
 }
 
 h2 {
+    font-size: 18px;
     margin: 10px 0px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px 40px;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px rgb(215, 215, 215);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 }

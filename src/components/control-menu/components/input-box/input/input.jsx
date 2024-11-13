@@ -1,10 +1,10 @@
 import './Input.css'
 
-export function Input({ label, placeholder }) {
+export function Input({ label, placeholder, id }) {
     return(
-        <>
-            <label htmlFor="name">{label}</label>
-            <input type="text" placeholder={placeholder} />
-        </>
+        <div className="input">
+            <label htmlFor={id} >{label}</label>
+            <input id={id} type="text" placeholder={placeholder} />
+        </div>
     )
 }

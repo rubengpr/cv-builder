@@ -1,5 +1,6 @@
-import './App.css'
 import React from 'react';
+import './App.css'
+
 import { Pdf } from './components/pdf/Pdf.jsx'
 import { H1 } from './components/pdf/components/H1/H1.jsx'
 import { PersonalInfo } from './components/pdf/components/personal-info/PersonalInfo.jsx'
@@ -15,25 +16,25 @@ export default function App() {
     <React.StrictMode>
       <div className="container">  
         <ControlMenu>
-          <InputBox title="Personal information">
-            <Input label="Name" />
-            <Input label="Phone number" />
-            <Input label="Email" />
-            <Input label="City" />
+          <InputBox title="Personal information" >
+            <Input label="Name" id="name" />
+            <Input label="Phone number" id="phone" />
+            <Input label="Email" id="email" />
+            <Input label="City" id="city" />
           </InputBox>
           <InputBox title="Work experience">
-            <Input label="Company" />
-            <Input label="Position" />
-            <Input label="Start Date" />
-            <Input label="End Date" />
-            <Input label="Description" />
+            <Input label="Company" id="company" />
+            <Input label="Position" id="position" />
+            <Input label="Start Date" id="work-start-date" />
+            <Input label="End Date" id="work-end-date" />
+            <Input label="Description" id="description" />
           </InputBox>
           <InputBox title="Education">
-            <Input label="School" />
-            <Input label="Degree" />
-            <Input label="Start Date" />
-            <Input label="End Date" />
-            <Input label="Location" />
+            <Input label="School" id="school" />
+            <Input label="Degree" id="degree" />
+            <Input label="Start Date" id="education-start-date" />
+            <Input label="End Date" id="education-end-date" />
+            <Input label="Location" id="location" />
           </InputBox>
         </ControlMenu>
         <Pdf>
