@@ -5,7 +5,7 @@ import { useState } from 'react';
 export function InputBox({ title, children }) {
     const [isExpanded, setIsExpanded] = useState(true);
     
-    const icon = isExpanded ? "./public/nav-arrow-up.svg" : "./public/nav-arrow-down.svg";
+    const icon = isExpanded ? "./nav-arrow-up.svg" : "./nav-arrow-down.svg";
     const cardClassName = isExpanded
     ? "card-expanded"
     : "card-collapsed"
