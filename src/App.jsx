@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css'
 
-import { Pdf } from './components/pdf/PDF.jsx'
-import { H1 } from './components/pdf/components/H1/H1.jsx'
-import { PersonalInfo } from './components/pdf/components/personal-info/PersonalInfo.jsx'
-import { SectionTitle } from './components/pdf/components/section-title/SectionTitle.jsx'
-import { CvElement } from './components/pdf/components/cv-element/CvElement.jsx'
+import { Pdf } from './components/pdf-view/PdfView.jsx'
+import { H1 } from './components/pdf-view/components/H1/H1.jsx'
+import { PersonalInfo } from './components/pdf-view/components/personal-info/PersonalInfo.jsx'
+import { SectionTitle } from './components/pdf-view/components/section-title/SectionTitle.jsx'
+import { CvElement } from './components/pdf-view/components/cv-element/CvElement.jsx'
 import { ControlMenu } from './components/control-menu/ControlMenu.jsx'
 import { InputBox } from './components/control-menu/components/input-box/InputBox.jsx'
 import { Input } from './components/control-menu/components/input-box/input/Input.jsx'
