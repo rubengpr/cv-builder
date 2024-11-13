@@ -8,7 +8,7 @@ import { SectionTitle } from './components/pdf-view/components/section-title/Sec
 import { CvElement } from './components/pdf-view/components/cv-element/CvElement.jsx'
 import { ControlMenu } from './components/control-menu/ControlMenu.jsx'
 import { InputBox } from './components/control-menu/components/input-box/InputBox.jsx'
-import { Input } from './components/control-menu/components/input-box/input/Input.jsx'
+import { Input } from './components/control-menu/components/input-box/input-element/Input.jsx'
 
 export default function App() {
 
