@@ -1,8 +1,9 @@
 import './InputBox.css'
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { Button } from '../../../button/Button.jsx';
 
-export function InputBox({ title, children }) {
+export function InputBox({ title, children, showButton, text }) {
     const [isExpanded, setIsExpanded] = useState(true);
     
     const icon = isExpanded ? "./nav-arrow-up.svg" : "./nav-arrow-down.svg";
@@ -26,6 +27,11 @@ export function InputBox({ title, children }) {
             </div>
             <div className={cardClassName}>
                 {children}
+            </div>
+            <div className="card-footer">
+                {showButton &&
+                    (<Button text={text} />)
+                }
             </div>
         </div>
     )

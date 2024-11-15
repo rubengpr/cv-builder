@@ -1,0 +1,12 @@
+.main-button {
+    align-self: center;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: rgb(255, 210, 151);
+}
+
+.main-button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 210, 151, 0.8);
+}

@@ -16,20 +16,20 @@ export default function App() {
     <React.StrictMode>
       <div className="container">  
         <ControlMenu>
-          <InputBox title="Personal information" >
+          <InputBox title="Personal information" showButton={false} >
             <Input label="Name" id="name" />
             <Input label="Phone number" id="phone" />
             <Input label="Email" id="email" />
             <Input label="City" id="city" />
           </InputBox>
-          <InputBox title="Work experience">
+          <InputBox title="Work experience" showButton={true} text='Add work' >
             <Input label="Company" id="company" />
             <Input label="Position" id="position" />
             <Input label="Start Date" id="work-start-date" />
             <Input label="End Date" id="work-end-date" />
             <Input label="Description" id="description" />
           </InputBox>
-          <InputBox title="Education">
+          <InputBox title="Education" showButton={true} text='Add education' >
             <Input label="School" id="school" />
             <Input label="Degree" id="degree" />
             <Input label="Start Date" id="education-start-date" />
