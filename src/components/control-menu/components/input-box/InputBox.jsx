@@ -39,4 +39,7 @@ export function InputBox({ title, children, showButton, text }) {
 
 InputBox.propTypes = {
     children: PropTypes.node,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    showButton: PropTypes.bool,
 };

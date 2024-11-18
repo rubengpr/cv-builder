@@ -9,16 +9,27 @@ import { CvElement } from './components/pdf-view/components/cv-element/CvElement
 import { ControlMenu } from './components/control-menu/ControlMenu.jsx'
 import { InputBox } from './components/control-menu/components/input-box/InputBox.jsx'
 import { Input } from './components/control-menu/components/input-box/input-element/Input.jsx'
+import { useState } from 'react'
 
 export default function App() {
+
+  const [name, setName] = useState('Antonio Banderas')
+
+  function handleNameChange(event) {
+    setName(event.target.value)
+  }
+
+  function handlePhoneChange(event) {
+    setPhone(event.target.value)
+  }
 
   return (
     <React.StrictMode>
       <div className="container">  
         <ControlMenu>
           <InputBox title="Personal information" showButton={false} >
-            <Input label="Name" id="name" />
-            <Input label="Phone number" id="phone" />
+            <Input handleNameChange={handleNameChange} label="Name" id="name" />
+            <Input handlePhoneChange={handlePhoneChange} label="Phone number" id="phone" />
             <Input label="Email" id="email" />
             <Input label="City" id="city" />
           </InputBox>
@@ -39,9 +50,9 @@ export default function App() {
         </ControlMenu>
         <Pdf>
           <div className='header'>
-            <H1 name="Ruben Godoy" />
+            <H1 name={name} />
             <div className='personal-info-container'>
-              <PersonalInfo src="/phone.svg" data="+34 685 90 38 45" />
+              <PersonalInfo src="/phone.svg" data="" />
               <PersonalInfo src="/email.svg" data="rubengpr@gmail.com" />
               <PersonalInfo src="/pin.svg" data="Barcelona, Spain" />
               </div>

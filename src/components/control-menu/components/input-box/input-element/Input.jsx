@@ -1,12 +1,7 @@
 import './Input.css'
-import { useState } from 'react'
+import PropTypes from 'prop-types';
 
-export function Input({ label, id }) {
-    const [cvName, setCvName] = useState("")
-    
-    const handleInputValue = (event) => {
-        setCvName(event.target.value)
-    }
+export function Input({ label, id, handleNameChange }) {
 
     return(
         <div className="input">
@@ -14,8 +9,13 @@ export function Input({ label, id }) {
             <input
                 id={id} 
                 type="text"
-                value={cvName}
-                onChange={handleInputValue} />
+                onChange={handleNameChange} />
         </div>
     )
 }
+
+Input.propTypes = {
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    handleNameChange: PropTypes.func.isRequired,
+};
