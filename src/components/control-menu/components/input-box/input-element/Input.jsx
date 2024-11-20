@@ -1,7 +1,7 @@
 import './Input.css'
 import PropTypes from 'prop-types';
 
-export function Input({ label, id, handleNameChange }) {
+export function Input({ label, id, handleChange }) {
 
     return(
         <div className="input">
@@ -9,7 +9,7 @@ export function Input({ label, id, handleNameChange }) {
             <input
                 id={id} 
                 type="text"
-                onChange={handleNameChange} />
+                onChange={handleChange} />
         </div>
     )
 }
@@ -17,5 +17,5 @@ export function Input({ label, id, handleNameChange }) {
 Input.propTypes = {
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    handleNameChange: PropTypes.func.isRequired,
+    handleChange: PropTypes.func,
 };

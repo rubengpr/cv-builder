@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Button } from '../../../button/Button.jsx';
 
-export function InputBox({ title, children, showButton, text }) {
+export function InputBox({ title, children, showButton, text, handleClickButton }) {
     const [isExpanded, setIsExpanded] = useState(true);
     
     const icon = isExpanded ? "./nav-arrow-up.svg" : "./nav-arrow-down.svg";
@@ -30,7 +30,7 @@ export function InputBox({ title, children, showButton, text }) {
             </div>
             <div className="card-footer">
                 {showButton &&
-                    (<Button text={text} />)
+                    (<Button handleClickButton={handleClickButton} text={text} />)
                 }
             </div>
         </div>
@@ -42,4 +42,5 @@ InputBox.propTypes = {
     title: PropTypes.string,
     text: PropTypes.string,
     showButton: PropTypes.bool,
+    handleClickButton: PropTypes.func,
 };
