@@ -1,3 +1,11 @@
+.card-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 10px;
+}
+
 .button-wrapper {
     display: flex;
     flex-direction: row;
@@ -9,15 +17,21 @@
 .button-font {
     background-color: white;
     color: black;
-    padding: 5px 10px;
+    padding: 3px 10px;
     border: 1px solid gray;
     border-radius: 5px;
     background-color: rgb(255, 210, 151);
+    font-size: 12px;
+    color: rgb(32, 32, 32);
 }
 
 .button-font:hover {
     cursor: pointer;
     background-color: rgb(255, 210, 151, 0.8);
+}
+
+.font-title {
+    font-weight: 900;
 }
 
 .arial {

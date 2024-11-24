@@ -200,8 +200,10 @@ export default function App() {
     <React.StrictMode>
       <div className="container">
         <ControlMenu>
-          <StylesCard handleFontChange={handleFontChange} />
-          <ColorCard handleColorChange={handleColorChange} color={color} />
+          <InputBox title="Styling properties" showButton={false}>
+            <StylesCard handleFontChange={handleFontChange} />
+            <ColorCard handleColorChange={handleColorChange} color={color} />
+          </InputBox>
           <InputBox title="Personal information" showButton={false} >
             <Input handleChange={handleChange} label="Name" id="name" />
             <Input handleChange={handleChange} label="Phone number" id="phone" />
