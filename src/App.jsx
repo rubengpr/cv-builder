@@ -78,15 +78,35 @@ export default function App() {
         break;
 
       case 'work-start-date':
-        setStartDate(inputValue)
+        setWorkStartDate(inputValue)
         break;
 
       case 'work-end-date':
-        setEndDate(inputValue)
+        setWorkEndDate(inputValue)
         break;
 
-      case 'location':
-        setLocation(inputValue)
+      case 'work-location':
+        setWorkLocation(inputValue)
+        break;
+
+      case 'school':
+        setSchool(inputValue)
+        break;
+
+      case 'degree':
+        setDegree(inputValue)
+        break;
+      
+      case 'education-start-date':
+        setEdStartDate(inputValue)
+        break;
+
+      case 'education-end-date':
+        setEdEndDate(inputValue)
+        break;
+
+      case 'education-location':
+        setEdLocation(inputValue)
         break;
     }
 
@@ -94,9 +114,15 @@ export default function App() {
 
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [location, setLocation] = useState("");
+  const [workStartDate, setWorkStartDate] = useState("");
+  const [workEndDate, setWorkEndDate] = useState("");
+  const [workLocation, setWorkLocation] = useState("");
+
+  const [school, setSchool] = useState("");
+  const [degree, setDegree] = useState("");
+  const [edStartDate, setEdStartDate] = useState("");
+  const [edEndDate, setEdEndDate] = useState("");
+  const [edLocation, setEdLocation] = useState("");
   
   function handleClickButton(event) {
 
@@ -105,8 +131,8 @@ export default function App() {
       setWorkExperiences([
         ...workExperiences,
         {
-          period: `${startDate} - ${endDate}`,
-          city: location,
+          period: `${workStartDate} - ${workEndDate}`,
+          city: workLocation,
           place: company,
           subject: position,
         },
@@ -114,20 +140,27 @@ export default function App() {
 
       setCompany('');
       setPosition('');
-      setStartDate('');
-      setEndDate('');
-      setLocation('');
+      setWorkStartDate('');
+      setWorkEndDate('');
+      setWorkLocation('');
 
     } else {
       setEducationExperiences([
         ...educationExperiences,
         {
-          period: `${startDate} - ${endDate}`,
-          city: location,
-          place: company,
-          subject: position,
+          period: `${edStartDate} - ${edEndDate}`,
+          city: edLocation,
+          place: school,
+          subject: degree,
         },
       ]);
+
+      setCompany('');
+      setPosition('');
+      setEdStartDate('');
+      setEdEndDate('');
+      setEdLocation('');
+
     }
 
   }
@@ -142,19 +175,19 @@ export default function App() {
             <Input handleChange={handleChange} label="Email" id="email" />
             <Input handleChange={handleChange} label="City" id="city" />
           </InputBox>
-          <InputBox title="Work experience" showButton={true} value={company} handleClickButton={handleClickButton} text='Add work' >
+          <InputBox title="Work experience" showButton={true} handleClickButton={handleClickButton} text='Add work' >
             <Input handleChange={handleChange} label="Company" id="company" value={company} />
             <Input handleChange={handleChange} label="Position" id="position" value={position} />
-            <Input handleChange={handleChange} label="Start Date" id="work-start-date" value={startDate} />
-            <Input handleChange={handleChange} label="End Date" id="work-end-date" value={endDate} />
-            <Input handleChange={handleChange} label="Location" id="location" value={location} />
+            <Input handleChange={handleChange} label="Start Date" id="work-start-date" value={workStartDate} />
+            <Input handleChange={handleChange} label="End Date" id="work-end-date" value={workEndDate} />
+            <Input handleChange={handleChange} label="Location" id="work-location" value={workLocation} />
           </InputBox>
           <InputBox title="Education" showButton={true} text='Add education' handleClickButton={handleClickButton} >
-            <Input handleChange={handleChange} label="School" id="school" />
-            <Input handleChange={handleChange} label="Degree" id="degree" />
-            <Input handleChange={handleChange} label="Start Date" id="education-start-date" />
-            <Input handleChange={handleChange} label="End Date" id="education-end-date" />
-            <Input handleChange={handleChange} label="Location" id="location" />
+            <Input handleChange={handleChange} label="School" id="school" value={school} />
+            <Input handleChange={handleChange} label="Degree" id="degree" value={degree} />
+            <Input handleChange={handleChange} label="Start Date" id="education-start-date" value={edStartDate} />
+            <Input handleChange={handleChange} label="End Date" id="education-end-date" value={edEndDate} />
+            <Input handleChange={handleChange} label="Location" id="education-location" value={edLocation} />
           </InputBox>
         </ControlMenu>
         <Pdf>
