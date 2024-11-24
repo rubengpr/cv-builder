@@ -8,8 +8,8 @@
 
 .colorpicker-button {
     background-color: white;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid gray;
     width: 40px;
-    height: 40px;
+    height: 40px;   
 }
