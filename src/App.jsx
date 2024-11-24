@@ -9,6 +9,9 @@ import { CvElement } from './components/pdf-view/components/cv-element/CvElement
 import { ControlMenu } from './components/control-menu/ControlMenu.jsx'
 import { InputBox } from './components/control-menu/components/input-box/InputBox.jsx'
 import { Input } from './components/control-menu/components/input-box/input-element/Input.jsx'
+import { LogCard } from './components/control-menu/log-card/LogCard.jsx'
+import { StylesCard } from './components/control-menu/styles-card/StylesCard.jsx'
+import { ColorCard } from './components/control-menu/color-card/ColorCard.jsx'
 import { useState } from 'react'
 
 export default function App() {
@@ -165,16 +168,47 @@ export default function App() {
 
   }
 
+  function handleClickDeleteWork(indexToDelete) {
+    setWorkExperiences([
+      ...workExperiences.slice(0, indexToDelete),
+      ...workExperiences.slice(indexToDelete + 1),
+    ]);
+  }
+
+  function handleClickDeleteEducation(indexToDelete) {
+    setEducationExperiences([
+      ...educationExperiences.slice(0, indexToDelete),
+      ...educationExperiences.slice(indexToDelete + 1),
+    ]);
+  }
+
+  const [font, setFont] = useState('arial')
+  const fontClass = `font-${font.toLowerCase()}`;
+  
+  function handleFontChange(event) {
+    setFont(event.target.textContent);
+  }
+
+  const [color, setColor] = useState('#ffe4c4');
+
+  function handleColorChange(event) {
+    setColor(event.target.value)
+    console.log(color);
+  }
+
   return (
     <React.StrictMode>
-      <div className="container">  
+      <div className="container">
         <ControlMenu>
+          <StylesCard handleFontChange={handleFontChange} />
+          <ColorCard handleColorChange={handleColorChange} color={color} />
           <InputBox title="Personal information" showButton={false} >
             <Input handleChange={handleChange} label="Name" id="name" />
             <Input handleChange={handleChange} label="Phone number" id="phone" />
             <Input handleChange={handleChange} label="Email" id="email" />
             <Input handleChange={handleChange} label="City" id="city" />
           </InputBox>
+          
           <InputBox title="Work experience" showButton={true} handleClickButton={handleClickButton} text='Add work' >
             <Input handleChange={handleChange} label="Company" id="company" value={company} />
             <Input handleChange={handleChange} label="Position" id="position" value={position} />
@@ -182,6 +216,14 @@ export default function App() {
             <Input handleChange={handleChange} label="End Date" id="work-end-date" value={workEndDate} />
             <Input handleChange={handleChange} label="Location" id="work-location" value={workLocation} />
           </InputBox>
+          {workExperiences.map((experience, index) => (
+            <LogCard
+            key={index}
+            title={experience.place}
+            handleClickDelete={() => handleClickDeleteWork(index)}
+          />
+          ))
+          }
           <InputBox title="Education" showButton={true} text='Add education' handleClickButton={handleClickButton} >
             <Input handleChange={handleChange} label="School" id="school" value={school} />
             <Input handleChange={handleChange} label="Degree" id="degree" value={degree} />
@@ -189,9 +231,17 @@ export default function App() {
             <Input handleChange={handleChange} label="End Date" id="education-end-date" value={edEndDate} />
             <Input handleChange={handleChange} label="Location" id="education-location" value={edLocation} />
           </InputBox>
+          {educationExperiences.map((experience, index) => (
+            <LogCard
+            key={index}
+            title={experience.place}
+            handleClickDelete={() => handleClickDeleteEducation(index)}
+          />
+          ))
+          }
         </ControlMenu>
-        <Pdf>
-          <div className='header'>
+        <Pdf fontClass={fontClass}>
+          <div className='header' style={{ backgroundColor: color }}>
             <H1 name={name} />
             <div className='personal-info-container'>
               <PersonalInfo src="/phone.svg" name={phone} />
@@ -200,7 +250,7 @@ export default function App() {
               </div>
           </div>
           <div className="body-cv">
-            <SectionTitle title="Work Experience" />
+            <SectionTitle title="Work Experience" color={color} />
             {workExperiences.map((experience, index) => (
               <CvElement
                 key={index}
@@ -210,7 +260,7 @@ export default function App() {
                 subject={experience.subject}
               />
             ))}
-            <SectionTitle title="Education" />
+            <SectionTitle title="Education" color={color} />
             {educationExperiences.map((experience, index) => (
               <CvElement
                 key={index}

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import './PdfView.css';
 
-export function Pdf({ children }) {
+export function Pdf({ children, fontClass }) {
     return(
-        <div className='pdf'>
+        <div className={`pdf ${fontClass}`}>
             {children}
         </div>
         
@@ -12,4 +12,6 @@ export function Pdf({ children }) {
 
 Pdf.propTypes = {
     children: PropTypes.node,
+    fontClass: PropTypes.string,
+    color: PropTypes.string,
 };

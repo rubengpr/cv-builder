@@ -6,3 +6,21 @@
     width: 55%;
     border: 1px solid gray;
 }
+
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-monospace {
+    font-family: monospace;
+}
+
+.font-georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.header {
+    background-color: #ffe4c4;
+    padding: 30px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
