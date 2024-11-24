@@ -1,4 +1,5 @@
 import './CvElement.css'
+import PropTypes from 'prop-types'
 
 export function CvElement({ period, city, place, subject }) {
     return(
@@ -13,4 +14,11 @@ export function CvElement({ period, city, place, subject }) {
             </div>
         </div>  
     )
+}
+
+CvElement.propTypes = {
+    period: PropTypes.string,
+    city: PropTypes.string,
+    place: PropTypes.string,
+    subject: PropTypes.string,
 }

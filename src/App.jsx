@@ -50,42 +50,43 @@ export default function App() {
 
   function handleChange(event) {
     let inputId = event.target.id
+    let inputValue = event.target.value
 
     switch (inputId) {
       case 'name':
-        setName(event.target.value)
+        setName(inputValue)
         break;
 
       case 'phone':
-        setPhone(event.target.value)
+        setPhone(inputValue)
         break;
 
       case 'email':
-        setEmail(event.target.value)
+        setEmail(inputValue)
         break;
 
       case 'city':
-        setCity(event.target.value)
+        setCity(inputValue)
         break;
 
       case 'company':
-        setCompany(event.target.value)
+        setCompany(inputValue)
         break;
 
       case 'position':
-        setPosition(event.target.value)
+        setPosition(inputValue)
         break;
 
       case 'work-start-date':
-        setStartDate(event.target.value)
+        setStartDate(inputValue)
         break;
 
       case 'work-end-date':
-        setEndDate(event.target.value)
+        setEndDate(inputValue)
         break;
 
       case 'location':
-        setLocation(event.target.value)
+        setLocation(inputValue)
         break;
     }
 
@@ -110,6 +111,13 @@ export default function App() {
           subject: position,
         },
       ]);
+
+      setCompany('');
+      setPosition('');
+      setStartDate('');
+      setEndDate('');
+      setLocation('');
+
     } else {
       setEducationExperiences([
         ...educationExperiences,
@@ -135,11 +143,11 @@ export default function App() {
             <Input handleChange={handleChange} label="City" id="city" />
           </InputBox>
           <InputBox title="Work experience" showButton={true} value={company} handleClickButton={handleClickButton} text='Add work' >
-            <Input handleChange={handleChange} label="Company" id="company" />
-            <Input handleChange={handleChange} label="Position" id="position" />
-            <Input handleChange={handleChange} label="Start Date" id="work-start-date" />
-            <Input handleChange={handleChange} label="End Date" id="work-end-date" />
-            <Input handleChange={handleChange} label="Location" id="location" />
+            <Input handleChange={handleChange} label="Company" id="company" value={company} />
+            <Input handleChange={handleChange} label="Position" id="position" value={position} />
+            <Input handleChange={handleChange} label="Start Date" id="work-start-date" value={startDate} />
+            <Input handleChange={handleChange} label="End Date" id="work-end-date" value={endDate} />
+            <Input handleChange={handleChange} label="Location" id="location" value={location} />
           </InputBox>
           <InputBox title="Education" showButton={true} text='Add education' handleClickButton={handleClickButton} >
             <Input handleChange={handleChange} label="School" id="school" />
